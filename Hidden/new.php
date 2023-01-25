@@ -8,9 +8,11 @@
 </head>
 
 <body>
+    <!--Links-->
     <?php include('movie.php')?>
     <?php include('movies.php')?>
     <h1>Hello <?php echo $_POST['user'];?></h1>
+    <!--Code PHP-->
 <?php
 if(isset($_POST['enviar'])){
     $movies = new Movies($_POST['hidden']);
@@ -24,6 +26,7 @@ if(isset($_POST['enviar'])){
     $movies->toString();
 }
 ?>
+<!--Formulario-->
     <form method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" />

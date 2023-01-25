@@ -2,10 +2,12 @@
     class Movies{
         private $movies = [];
 
+        //Constructor method
         public function __construct($hidden){
             $this->convertToArray($hidden);
         }
 
+        //Méthod to add a Movie to an array of Movies
         public function add($m1){
             if($m1->getName() != null && $m1->getIsan() != null && $m1->getYear() != null && $m1->getPoints() != null){
                 if(strlen($m1->getIsan()) >= 8){
@@ -38,6 +40,7 @@
             }
         }
 
+        //Method to convert a string into an array
         public function convertToArray($hidden){
             $movie = explode("$", $hidden);
             for($i = 0; $i < count($movie); $i++){
@@ -47,6 +50,7 @@
             }
         }
 
+        //Method to convert an array into a string
         public function convertToString(){
             $val = "";
             foreach($this->movies as $i){
@@ -57,6 +61,7 @@
             return $val;
         }
 
+        //Método display
         public function toString(){
             $counter = 0;
             foreach($this->movies as $i){
